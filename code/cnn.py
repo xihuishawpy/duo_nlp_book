@@ -121,7 +121,7 @@ def pad_sentences(data,maxlen=56,values=0.,vec_size = 300):
     """
     length = len(data)
     if length < maxlen:
-        for i in range(maxlen - length):
+        for _ in range(maxlen - length):
             data.append(np.array([values]*vec_size))
     return data
 
