@@ -82,10 +82,9 @@ def get_keywords(articles):
     text=" ".join(articles)
 
 
-    keywords_tfidf = analyse.extract_tags(text, topK=10,
-                                          withWeight=False, allowPOS=('n', 'ns', 'vn', 'v', 'nz'))
-
-    return keywords_tfidf
+    return analyse.extract_tags(
+        text, topK=10, withWeight=False, allowPOS=('n', 'ns', 'vn', 'v', 'nz')
+    )
 
 
 def do_cluster(x,articles_content):
@@ -162,7 +161,7 @@ def do_lda_usemulticore():
 
     #计算耗时
     end = time.clock()
-    print('[data clean]Running time: %s Seconds' % (end - start))
+    print(f'[data clean]Running time: {end - start} Seconds')
 
 
     #获取当前时间
@@ -180,11 +179,11 @@ def do_lda_usemulticore():
 
     #计算耗时
     end = time.clock()
-    print('[get word bag]Running time: %s Seconds' % (end - start))
+    print(f'[get word bag]Running time: {end - start} Seconds')
 
 
-    # 利用TFIDF&LDA做主题分类的情况
-    print "TFIDF&LDA"
+    #获取当前时间
+    start = time.clock()
 
     num_topics=200
 
@@ -201,7 +200,7 @@ def do_lda_usemulticore():
 
     #计算耗时
     end = time.clock()
-    print('[lda]Running time: %s Seconds' % (end - start))
+    print(f'[lda]Running time: {end - start} Seconds')
 
     x=lda[texts_tf_idf]
 

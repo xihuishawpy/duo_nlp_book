@@ -127,10 +127,10 @@ if __name__ == '__main__':
         if i == 79:
             t.append(0)
 
-        if i == 81:
+        elif i == 81:
             t.append(1)
 
-        if i == 91:
+        elif i == 91:
             t.append(2)
 
     y=to_categorical(t, num_classes=3)

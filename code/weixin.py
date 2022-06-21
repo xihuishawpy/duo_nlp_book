@@ -56,7 +56,7 @@ def sendall(msg):
 
         #print("UserName:%s NickName:%s City:%s" % (UserName,NickName,City))
         # 发送的主键为UserName字段的值
-        text="hi %s,%s" %(NickName,msg)
+        text = f"hi {NickName},{msg}"
 
         # 休眠10秒
         time.sleep(10)
